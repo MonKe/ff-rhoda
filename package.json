@@ -1,5 +1,5 @@
 {
-  "name": "typescript + webpack boilerplate",
+  "name": "typescript-webpack-boilerplate",
   "version": "1.0.0",
   "description": "Typescript + Webpack base project, use 'npm install' to get started.",
   "main": "dist/bundle.js",

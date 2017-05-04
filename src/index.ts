@@ -32,21 +32,23 @@ let lenny: Person = new Person(
 )
 
 let events: string[] = [
+  '# Fighters: Rhoda and Lenny!',
   rhoda.toString(),
   lenny.toString(),
 
-  'Rhoda attacks Lenny!',
+  '# Rhoda attacks Lenny!',
   rhoda.hit(lenny).toString(),
 
-  'Rhoda picks an apple!',
+  '# Rhoda picks an apple!',
   rhoda.take(itemBank.apple).toString(),
+
+  '# Rhoda eats the apple!',
   rhoda.eat(itemBank.apple).toString(),
 
-  'Rhoda takes lots of food!',
-  rhoda.take(itemBank.apple).toString(),
-  rhoda.take(itemBank.apple).toString(),
+  '# Rhoda takes lots of food!',
+  rhoda.take(itemBank.apple).take(itemBank.apple).toString(),
 
-  'Lenny steals from Rhoda!',
+  '# Lenny steals from Rhoda!',
   lenny.steal(rhoda).toString(),
   lenny.toString()
 ]

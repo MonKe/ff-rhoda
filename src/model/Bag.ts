@@ -8,13 +8,15 @@ export default class Bag {
   constructor(public items: StackMap) {}
 
   toString(): string {
-    let buffer = Object
+    let buffer: any = Object
       .keys(this.items)
       .map(
         (key: string) => `\n* ${this.items[key].item.toString()} `
           + `x${this.items[key].amount}`
       )
-      .join('')
+    if (buffer.length == 0) {
+      buffer = ['empty']
+    }
     return `Bag: ${buffer}\n`
   }
 

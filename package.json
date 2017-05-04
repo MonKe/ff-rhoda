@@ -1,7 +1,7 @@
 {
-  "name": "typescript-webpack-boilerplate",
+  "name": "ff-rhoda",
   "version": "1.0.0",
-  "description": "Typescript + Webpack base project, use 'npm install' to get started.",
+  "description": "Fantasy Fighter Rhoda: a typescript exercise.",
   "main": "dist/bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -32,10 +32,14 @@ let lenny: Person = new Person(
   new Bag({})
 )
 
-console.log(rhoda.toString(), lenny.toString())
-console.log('Rhoda attacks Lenny!')
-console.log(rhoda.hit(lenny).toString())
+let events: string[] = [
+  rhoda.toString(),
+  lenny.toString(),
+  'Rhoda attacks Lenny!',
+  rhoda.hit(lenny).toString(),
+  'Rhoda picks an apple!',
+  rhoda.bag.add(itemBank.apple).toString(),
+  rhoda.eat(itemBank.apple).toString()
+]
 
-console.log('Rhoda picks an apple!')
-console.log(rhoda.bag.add(itemBank.apple).toString())
-console.log(rhoda.eat(itemBank.apple).toString())
+document.getElementById('output').innerHTML = events.join('\n')

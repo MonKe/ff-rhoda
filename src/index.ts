@@ -37,7 +37,7 @@ let events: string[] = [
   'Rhoda attacks Lenny!',
   rhoda.hit(lenny).toString(),
   'Rhoda picks an apple!',
-  rhoda.bag.add(itemBank.apple).toString(),
+  rhoda.take(itemBank.apple).toString(),
   rhoda.eat(itemBank.apple).toString()
 ]
 

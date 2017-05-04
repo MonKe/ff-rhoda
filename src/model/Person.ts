@@ -3,6 +3,7 @@ import Equipment from './Equipment'
 import Bag from './Bag'
 import Food from './Food'
 import Stats from './Stats'
+import Item from './Item'
 
 export default class Person implements HasName {
 
@@ -39,6 +40,16 @@ export default class Person implements HasName {
   eat(food: Food): Person {
     this.bag.remove(food)
     food.heal(this)
+    return this
+  }
+
+  take(item: Item): Person {
+    this.bag.add(item)
+    return this
+  }
+
+  drop(item: Item): Person {
+    this.bag.remove(item)
     return this
   }
 }

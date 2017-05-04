@@ -1,6 +1,5 @@
 import {HasName} from './HasName'
-import Weapon from './Weapon'
-import Armor from './Armor'
+import Equipment from './Equipment'
 import Bag from './Bag'
 import Food from './Food'
 import Stats from './Stats'
@@ -9,26 +8,22 @@ export default class Person implements HasName {
 
   globalAttack: number
   globalDefense: number
-  baseWeapon: Weapon
-  baseArmor: Armor
+  baseEquipment: Equipment
 
   constructor(
     public name: string,
     public stats: Stats,
-    public weapon: Weapon,
-    public armor: Armor,
+    public equipment: Equipment,
     public bag: Bag
   ) {
-    this.globalAttack = stats.attack + weapon.attack
-    this.globalDefense = stats.defense + armor.defense
-    this.baseWeapon = weapon
-    this.baseArmor = armor
+    this.globalAttack = stats.attack + equipment.weapon.attack
+    this.globalDefense = stats.defense + equipment.armor.defense
+    this.baseEquipment = equipment
   }
 
   toString(): string {
     return `${this.name}: ${this.stats.toString()}`
-      + `\nEquiped with a ${this.weapon.toString()} `
-      + `and a ${this.armor.toString()}\n${this.bag.toString()}`
+      + `\n${this.equipment.toString()}\n${this.bag.toString()}`
   }
 
   // actions

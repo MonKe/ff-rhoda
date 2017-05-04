@@ -5,6 +5,7 @@ import Bag from './model/Bag'
 import Food from './model/Food'
 import Stats from './model/Stats'
 import Item from './model/Item'
+import Equipment from './model/Equipment'
 
 let itemBank: {[key: string]: any} = {
   // weapons
@@ -20,15 +21,13 @@ let itemBank: {[key: string]: any} = {
 let rhoda: Person = new Person(
   'Rhoda',
   new Stats(7, 6, 28),
-  itemBank.kick,
-  itemBank.pants,
+  new Equipment(itemBank.kick, itemBank.pants),
   new Bag({})
 )
 let lenny: Person = new Person(
   'Lenny',
   new Stats(10, 3, 33),
-  itemBank.punch,
-  itemBank.shirt,
+  new Equipment (itemBank.punch, itemBank.shirt),
   new Bag({})
 )
 

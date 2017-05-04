@@ -21,22 +21,39 @@ export default class Bag {
   // actions
 
   add(item: Item): Bag {
-    if (this.items.hasOwnProperty(item.name)) {
-      this.items[item.name].amount ++
+    return this.addStack(new Stack(item, 1))
+  }
+
+  addStack(stack: Stack): Bag {
+    if (this.items.hasOwnProperty(stack.item.name)) {
+      this.items[stack.item.name].amount += stack.amount
     }
     else {
-      this.items[item.name] = new Stack(item, 1)
+      this.items[stack.item.name] = stack
     }
     return this
   }
 
+  addAll(items: StackMap): Bag {
+    Object
+      .keys(items)
+      .map((key: string) => {
+        this.addStack(items[key])
+      })
+    return this
+  }
+
   remove(item: Item): Bag {
-    if (this.items.hasOwnProperty(item.name)) {
-      if (this.items[item.name].amount > 1) {
-        this.items[item.name].amount --
+    return this.removeStack(new Stack(item, 1))
+  }
+
+  removeStack(stack: Stack): Bag {
+    if (this.items.hasOwnProperty(stack.item.name)) {
+      if (this.items[stack.item.name].amount > stack.amount) {
+        this.items[stack.item.name].amount -= stack.amount
       }
       else {
-        delete this.items[item.name]
+        delete this.items[stack.item.name]
       }
     }
     return this

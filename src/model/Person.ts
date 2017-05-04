@@ -52,4 +52,10 @@ export default class Person implements HasName {
     this.bag.remove(item)
     return this
   }
+
+  steal(target: Person): Person {
+    this.bag.addAll(target.bag.items)
+    target.bag = new Bag({})
+    return target
+  }
 }
